@@ -1,5 +1,4 @@
-﻿using EISNT_UFCD0815.Web.Areas.Identity.Data;
-using Microsoft.AspNetCore.Identity;
+﻿using EISNT_UFCD0815.Web.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +10,8 @@ public class AppDbContext : IdentityDbContext<AppUser>
         : base(options)
     {
     }
+
+    public DbSet<Category> Categories { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
