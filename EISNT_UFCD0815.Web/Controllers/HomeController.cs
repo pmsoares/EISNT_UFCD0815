@@ -1,4 +1,4 @@
-﻿using EISNT_UFCD0815.Web.Models;
+﻿using EISNT_UFCD0815.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

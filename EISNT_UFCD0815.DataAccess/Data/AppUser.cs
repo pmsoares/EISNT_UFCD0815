@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace EISNT_UFCD0815.Web.Areas.Identity.Data;
+namespace EISNT_UFCD0815.DataAccess.Data;
 
 // Add profile data for application users by adding properties to the AppUser class
 public class AppUser : IdentityUser

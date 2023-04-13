@@ -17,4 +17,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-preview.2.23158.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EISNT_UFCD0815.DataAccess\EISNT_UFCD0815.DataAccess.csproj" />
+    <ProjectReference Include="..\EISNT_UFCD0815.Models\EISNT_UFCD0815.Models.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-namespace EISNT_UFCD0815.Web.Models
+namespace EISNT_UFCD0815.Models
 {
     public class ErrorViewModel
     {

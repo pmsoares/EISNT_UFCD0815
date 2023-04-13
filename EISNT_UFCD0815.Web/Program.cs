@@ -1,4 +1,4 @@
-using EISNT_UFCD0815.Web.Areas.Identity.Data;
+using EISNT_UFCD0815.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

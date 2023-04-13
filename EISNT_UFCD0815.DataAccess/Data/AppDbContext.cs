@@ -1,8 +1,8 @@
-﻿using EISNT_UFCD0815.Web.Models;
+﻿using EISNT_UFCD0815.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace EISNT_UFCD0815.Web.Areas.Identity.Data;
+namespace EISNT_UFCD0815.DataAccess.Data;
 
 public class AppDbContext : IdentityDbContext<AppUser>
 {
