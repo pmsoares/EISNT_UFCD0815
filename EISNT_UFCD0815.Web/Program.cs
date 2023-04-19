@@ -1,4 +1,6 @@
 using EISNT_UFCD0815.DataAccess.Data;
+using EISNT_UFCD0815.DataAccess.DBinitializer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,8 +9,15 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AppDbContextConnection' not found.");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddDefaultIdentity<AppUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.User.RequireUniqueEmail = true;
+})
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>();
 
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -27,6 +36,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+SeedDatabase();
+
 app.UseAuthorization();
 
 app.MapRazorPages();
@@ -36,3 +47,11 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+void SeedDatabase()
+{
+    using IServiceScope scope = app.Services.CreateScope();
+    IDbInitializer dbInitializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
+    dbInitializer.Initialize();
+}

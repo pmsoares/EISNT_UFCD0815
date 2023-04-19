@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EISNT_UFCD0815.DataAccess\EISNT_UFCD0815.DataAccess.csproj" />
     <ProjectReference Include="..\EISNT_UFCD0815.Models\EISNT_UFCD0815.Models.csproj" />
+    <ProjectReference Include="..\EISNT_UFCD0815.Utils\EISNT_UFCD0815.Utils.csproj" />
   </ItemGroup>
 
 </Project>
