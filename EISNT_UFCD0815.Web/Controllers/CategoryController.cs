@@ -1,10 +1,12 @@
 ﻿using EISNT_UFCD0815.DataAccess.Data;
 using EISNT_UFCD0815.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EISNT_UFCD0815.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;

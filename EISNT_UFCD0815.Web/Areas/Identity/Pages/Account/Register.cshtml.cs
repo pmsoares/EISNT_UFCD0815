@@ -71,6 +71,10 @@ namespace EISNT_UFCD0815.Web.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Phone number")]
             public string PhoneNumber { get; set; }
+
+            [Required]
+            [Display(Name = "Name")]
+            public string Name { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -90,6 +94,7 @@ namespace EISNT_UFCD0815.Web.Areas.Identity.Pages.Account
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 user.PhoneNumber = Input.PhoneNumber;
+                user.Name = Input.Name;
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
