@@ -37,14 +37,14 @@ namespace EISNT_UFCD0815.DataAccess.DBinitializer
 
                 _userManager.CreateAsync(new AppUser
                 {
-                    UserName = "email",
-                    Email = "email",
+                    UserName = "site",
+                    Email = "site",
                     PhoneNumber = "phone",
                     EmailConfirmed = true,
                     Name = "name"
                 }, "pass").GetAwaiter().GetResult();
 
-                AppUser? user = _context.Users.FirstOrDefault(u => u.Email == "email");
+                AppUser? user = _context.Users.FirstOrDefault(u => u.Email == "site");
                 _userManager.AddToRoleAsync(user!, SD.Role_Admin).GetAwaiter().GetResult();
             }
 

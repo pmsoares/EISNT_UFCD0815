@@ -8,7 +8,7 @@
 //        public AppDbContext CreateDbContext(string[] args)
 //        {
 //            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-//            string? connectionString = "string";
+//            string? connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=EISNT_UFCD0815;Trusted_Connection=True;MultipleActiveResultSets=true";
 //            optionsBuilder.UseSqlServer(connectionString);
 
 //            return new AppDbContext(optionsBuilder.Options);

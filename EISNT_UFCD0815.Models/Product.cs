@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EISNT_UFCD0815.Models
 {
@@ -39,5 +40,14 @@ namespace EISNT_UFCD0815.Models
         [Display(Name = "Price for 100+")]
         [Range(1, 1000)]
         public double Price100 { get; set; }
+
+        [Display(Name = "Category")]
+        public int CategoryId { get; set; }
+
+        [ForeignKey("CategoryId")]
+        [ValidateNever]
+        public Category Category { get; set; } = null!;
+
+        public string? ImageUrl { get; set; }
     }
 }

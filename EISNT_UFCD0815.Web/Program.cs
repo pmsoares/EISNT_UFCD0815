@@ -74,7 +74,7 @@ app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocal
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
 
