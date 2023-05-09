@@ -27,4 +27,8 @@
     <ProjectReference Include="..\EISNT_UFCD0815.Utils\EISNT_UFCD0815.Utils.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\product\" />
+  </ItemGroup>
+
 </Project>
